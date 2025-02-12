@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include app preferences -->
+    <include domain="sharedpref" path="."/>
+    
+    <!-- Include database files -->
+    <include domain="database" path="."/>
+    
+    <!-- Include specific app files -->
+    <include domain="file" path="images/"/>
+    <include domain="file" path="downloads/"/>
+    <include domain="file" path="documents/"/>
+    
+    <!-- Exclude cache and temporary files -->
+    <exclude domain="file" path="cache/"/>
+    <exclude domain="file" path="temp/"/>
+    <exclude domain="file" path="logs/"/>
+    
+    <!-- Exclude sensitive information -->
+    <exclude domain="sharedpref" path="auth_tokens.xml"/>
+    <exclude domain="sharedpref" path="credentials.xml"/>
+    <exclude domain="database" path="user_credentials.db"/>
+    
+    <!-- Exclude external files -->
+    <exclude domain="external" path="."/>
+    
+    <!-- Exclude root cache -->
+    <exclude domain="root" path="cache"/>
+    
+    <!-- Exclude specific file types -->
+    <exclude domain="file" path=".*\\.log"/>
+    <exclude domain="file" path=".*\\.tmp"/>
+    
+    <!-- Include app-specific files -->
+    <include domain="file" path="app_data/"/>
+    <include domain="file" path="user_files/"/>
+    
+    <!-- Database journal files -->
+    <exclude domain="database" path=".*-journal"/>
+    <exclude domain="database" path=".*-wal"/>
+    <exclude domain="database" path=".*-shm"/>
+</full-backup-content>
